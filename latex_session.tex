@@ -19,7 +19,7 @@
 \setlength{\columnsep}{2cm}
 
 %------------------------------------------------------------------------------
-%	TITLE PAGE
+% TITLE PAGE
 %------------------------------------------------------------------------------
 
 \title[Intro to \LaTeX]{Introduction to \LaTeX}
@@ -47,6 +47,13 @@ Cornell University \\
   \tableofcontents
 \end{frame}
 
+\begin{frame}
+  \frametitle{What is \LaTeX?}
+  \begin{itemize}
+    \item
+  \end{itemize}
+\end{frame}
+
 %------------------------------------------------------------------------------
 \section{Basic}
 %------------------------------------------------------------------------------
@@ -61,25 +68,39 @@ Cornell University \\
           \item The instructions are really good
           \item The files you have to download/install are huge (on the order of GBs)
         \end{itemize}
+      \item I highly recommend using an editor like TeXshop, TeXworks, Vim, Emacs, or even Sublime Text to write LaTeX with because they all are either built to compile your documents or have well supported plugins that do it all for you.
     \end{itemize}
 \end{frame}
 \begin{frame}[fragile]
   \frametitle{Basic Document Structure}
     \begin{itemize}
-      \item
-    \end{itemize}
-\end{frame}
-\begin{frame}[fragile]
-  \frametitle{Different Document Types}
-    \begin{itemize}
-      \item
+      \item \verb.\documentclass[options]{article}.
+      \item Preamble -- import external packages, set up page formatting, define your own macros, etc.
+      \item \verb.\begin{document}.
+      \item Some sort of title
+      \item \verb.\section{Section Title}.
+      \item Some content
+      \item \verb.\subsection{Subsection Title}.
+      \item More content
+      \item etc. etc. etc.
+      \item \verb.\end{document}.
     \end{itemize}
 \end{frame}
 
 
 \subsection{Titles \& Sections}
-\begin{frame}
-	\frametitle{Titles \& Sections}
+\begin{frame}[fragile]
+  \frametitle{Titles}
+  \begin{itemize}
+    \item \LaTeX has some shortcuts for you to make nice titles, but you don't \emph{have} to use them
+    \item A title will typically look like
+  \end{itemize}
+  \begin{verbatim}
+    \title{This is a Title}
+    \author{Scarlet \& Jeremy}
+    \date{November 2014}
+    \maketitle
+  \end{verbatim}
 \end{frame}
 
 \subsection{List Structures}
@@ -94,7 +115,7 @@ Cornell University \\
     \end{verbatim}
   \columnbreak
     \begin{enumerate}
-    	\item one.
+      \item one.
         \item two.
     \end{enumerate}
   \end{multicols}
@@ -108,7 +129,7 @@ Cornell University \\
     \end{verbatim}
   \columnbreak
     \begin{enumerate}[a)]
-    	\item one.
+      \item one.
         \item two.
     \end{enumerate}
   \end{multicols}
@@ -256,7 +277,7 @@ Cornell University \\
 
 \subsection{Paragraphs \& Alignment}
 \begin{frame}[fragile]
-	\frametitle{Text Paragraphs}
+  \frametitle{Text Paragraphs}
   \begin{itemize}
     \item Any time LaTeX sees a blank line, it treats the next line as
       the start of a new paragraph
@@ -321,7 +342,7 @@ Cornell University \\
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Alignment}
+  \frametitle{Alignment}
   \begin{itemize}
     \item Align equations using anchors \&
     \item Can be followed by anything, not just =
@@ -365,7 +386,7 @@ Cornell University \\
 
 \subsection{Multicols}
 \begin{frame}[fragile]
-	\frametitle{Multicols}
+  \frametitle{Multicols}
   \begin{verbatim}
     \begin{multicols}{2}
       \begin{enumerate} % chunk1
@@ -471,12 +492,12 @@ Cornell University \\
 
 \subsection{Boxes \& Resizing}
 \begin{frame}
-	\frametitle{Boxes \& Resizing}
+  \frametitle{Boxes \& Resizing}
 \end{frame}
 
 \subsection{Tables, Graphs, \& Figures}
 \begin{frame}[fragile]
-	\frametitle{Tables}
+  \frametitle{Tables}
   \begin{itemize}
     \item Most of the time you won't want to do this by hand
     \item There are lots of online tools that make it easier
@@ -556,7 +577,24 @@ Cornell University \\
   \end{tikzpicture}
 \end{frame}
 \begin{frame}[fragile]
-  \frametitle{Figures}
+  \frametitle{Figures \& Graphics}
+  \begin{itemize}
+    \item Include the \verb.graphicsx. package using \verb.\usepackage{graphicsx}. in your preamble.
+    \item Here's an example
+  \end{itemize}
+  \begin{verbatim}
+    \begin{figure}[h]
+      \includegraphics[width=0.3\textwidth]
+        {./awesomesauce.jpg}
+      \caption{This is an amazing picture}
+    \end{figure}
+  \end{verbatim}
+  \begin{figure}[ht]
+    \centering
+    \label{awesomesauce}
+    \includegraphics[width=0.3\textwidth]{./awesomesauce.jpg}
+    \caption{This is an amazing picture}
+  \end{figure}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -565,12 +603,12 @@ Cornell University \\
 
 \subsection{External Packages}
 \begin{frame}
-	\frametitle{External Packages}
+  \frametitle{External Packages}
 \end{frame}
 
 \subsection{References}
 \begin{frame}[fragile]
-	\frametitle{References}
+  \frametitle{References}
   \begin{itemize}
     \item You can reference nearly anything in \LaTeX: equations, figures, graphs, tables, etc.
     \item Give the equation a \verb.\label{name}. and then get a reference to it (i.e. Equation 1) using \verb.\ref{name}.
@@ -587,7 +625,7 @@ Cornell University \\
 
 \subsection{Presentations (Very Meta)}
 \begin{frame}[fragile]
-	\frametitle{Presentations (Very Meta)}
+  \frametitle{Presentations (Very Meta)}
   \begin{itemize}
     \item Use beamer!
     \item There are a lot of combinations of themes and layouts (\href{http://www.hartwork.org/beamer-theme-matrix/}{use this handy tool})
