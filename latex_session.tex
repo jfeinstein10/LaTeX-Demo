@@ -16,6 +16,7 @@
 \usepackage{listings}
 \usepackage{tikz}
 \usepackage{multicol}
+\usepackage{color}
 \setlength{\columnsep}{2cm}
 
 %------------------------------------------------------------------------------
@@ -112,6 +113,21 @@ Cornell University \\
     Now I've forced it onto a new line, but not a new
     paragraph.
   \end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Text Style}
+  \begin{itemize}
+    \item There are all the normal text styles you'd expect from a word processor, but for some you have to use external packages.
+    \item For example, to use color you need to add \verb.\usepackage{color}. to your preamble
+  \end{itemize}
+  \begin{tabular}{ll}
+    \verb.\textbf{Hello World}. & \textbf{Hello World} \\
+    \verb.\emph{Hello World}. & \emph{Hello World} \\
+    \verb.\textsc{Hello World}. & \textsc{Hello World} \\
+    \verb.\texttt{Hello World}. & \texttt{Hello World} \\
+    \verb.\underline{Hello World}. & \underline{Hello World} \\
+    \verb.\textcolor{red}{Hello World}. & \textcolor{red}{Hello World} \\
+  \end{tabular}
 \end{frame}
 \begin{frame}[fragile]
   \frametitle{Titles}
@@ -673,7 +689,7 @@ Cornell University \\
 \begin{frame}[fragile]
   \frametitle{Presentations (Very Meta)}
   \begin{itemize}
-    \item Use beamer!
+    \item Use beamer with \verb.\documentclass{beamer}.
     \item There are a lot of combinations of themes and layouts (\href{http://www.hartwork.org/beamer-theme-matrix/}{use this handy tool})
     \item Slides are defined using
   \end{itemize}
