@@ -103,7 +103,8 @@ Cornell University \\
     \item Any time LaTeX sees a blank line, it treats the next line as
       the start of a new paragraph
     \item You can force new lines with \verb.\\.
-    \item Add indentation by \verb.indent. or suppress it with \verb.\noindent.
+
+    \item Add indentation by \verb.\indent. or suppress it with \verb.\noindent.
   \end{itemize}
   \begin{verbatim}
     This is the start of a new paragraph.
@@ -478,7 +479,7 @@ Cornell University \\
   \frametitle{Multicols}
   \begin{verbatim}
     \begin{multicols}{2}
-      Latex is beautiful! It is easy to learn!
+      Latex is beautiful! It is easy to learn! \\
     \columnbreak        % forces column break
       Computer Science is great!
       Hope this session is helping!
@@ -486,7 +487,7 @@ Cornell University \\
   \end{verbatim}
 
   \begin{multicols}{2}
-    Latex is beautiful! It is easy to learn!
+    Latex is beautiful! It is easy to learn! \\
   \columnbreak        % forces column break
     Computer Science is great!
     Hope this session is helping!
@@ -553,8 +554,26 @@ Cornell University \\
 \end{frame}
 
 \subsection{Boxes \& Resizing}
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Boxes \& Resizing}
+  \begin{itemize}
+    \item simple box around an equation
+  \end{itemize}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{equation}
+        \boxed{a = b}
+      \end{equation}
+    \end{verbatim}
+  \columnbreak
+  \begin{equation}
+    \boxed{a = b}
+  \end{equation}
+  \end{multicols}
+
+  \begin{itemize}
+    \item For more capabilities, use empheq package
+  \end{itemize}
 \end{frame}
 
 \subsection{Tables, Graphs, \& Figures}
@@ -590,6 +609,7 @@ Cornell University \\
     \end{table}
   \end{multicols}
 \end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Tables}
   \begin{itemize}
@@ -638,6 +658,7 @@ Cornell University \\
   }
   \end{tikzpicture}
 \end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Figures \& Graphics}
   \begin{itemize}
@@ -659,6 +680,55 @@ Cornell University \\
   \end{figure}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Figures \& Graphics}
+  \begin{itemize}
+    \item include path and extensions in preamble for ease
+  \end{itemize}
+  \begin{verbatim}
+    \graphicspath{ {./images/hw4/} }
+    \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+  \end{verbatim}
+  \begin{itemize}
+    \item Then you can just put
+  \end{itemize}
+  \begin{verbatim}
+    \includegraphics[width=8cm]{awesomesauce}
+  \end{verbatim}
+\end{frame}
+
+\subsection{Writing Code}
+\begin{frame}[fragile]
+  \frametitle{Verbatim}
+  \begin{itemize}
+    \item Write things within verbatim
+  \end{itemize}
+  \begin{verbatim}
+    \begin{verbatim.}
+      public static void main(String[] args)
+      {
+        System.out.println("Hello World");
+      }
+    \end{verbatim.}
+  \end{verbatim}
+  \begin{itemize}
+    \item For sytax highlighting and better codes, use listings package
+      \verb.\usepackage{listings}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Verbatim}
+  \begin{itemize}
+    \item for short verbatim words, use \verb.\verb.
+    \item \verb.\verb. turns words that are within the two separators into
+      verbatim.
+    \item Separater is the letter folling the \verb.\verb.
+    \begin{verbatim}
+      \verb+Everything Here is Verbatim+
+    \end{verbatim}
+  \end{itemize}
+\end{frame}
 %----------------------------------------------------------------------------------------
 \section{Advanced}
 %----------------------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+\frametitle{Presentations (Very Meta)}
+  \begin{itemize}
+    \item Use beamer with \verb.\documentclass{beamer}.
+    \item There are a lot of combinations of themes and layouts (\href{http://www.hartwork.org/beamer-theme-matrix/}{use this handy tool})
+    \item Slides are defined using
+  \end{itemize}
+  \begin{verbatim}
+    \begin{frame}
+      \frametitle{title}
+      ...content...
+    \end{frame}
+  \end{verbatim}
+  \begin{itemize}
+    \item And \verb.\section., etc. are used to break up slides so you can get neat labels like the ones up top!
+  \end{itemize}

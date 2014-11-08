@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Basic}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Setting Up}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Basic Writing}{6}{0}{1}
+\beamer@subsectionintoc {1}{3}{List Structures}{11}{0}{1}
+\beamer@subsectionintoc {1}{4}{Math Mode \& Symbols}{14}{0}{1}
+\beamer@subsectionintoc {1}{5}{Math Paragraphs \& Alignment}{17}{0}{1}
+\beamer@subsectionintoc {1}{6}{Multicols}{21}{0}{1}
+\beamer@sectionintoc {2}{Intermediate}{23}{0}{2}
+\beamer@subsectionintoc {2}{1}{Defining \& Renewing Commands}{23}{0}{2}
+\beamer@subsectionintoc {2}{2}{Boxes \& Resizing}{26}{0}{2}
+\beamer@subsectionintoc {2}{3}{Tables, Graphs, \& Figures}{27}{0}{2}
+\beamer@subsectionintoc {2}{4}{Writing Code}{33}{0}{2}
+\beamer@sectionintoc {3}{Advanced}{35}{0}{3}
+\beamer@subsectionintoc {3}{1}{References}{35}{0}{3}
+\beamer@subsectionintoc {3}{2}{Presentations (Very Meta)}{36}{0}{3}
