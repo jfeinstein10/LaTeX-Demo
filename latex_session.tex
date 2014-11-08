@@ -50,7 +50,14 @@ Cornell University \\
 \begin{frame}
   \frametitle{What is \LaTeX?}
   \begin{itemize}
-    \item
+    \item A document preparation and markup language for high-quality typesetting
+      \begin{itemize}
+        \item i.e. it takes your confusing looking markup and compiles it to a beautiful PDF
+      \end{itemize}
+    \item Widely used in academic research, especially the sciences
+      \begin{itemize}
+        \item i.e. it gives off a very professional feel, even when what you're writing makes no sense $\ddot\smile$
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -88,11 +95,28 @@ Cornell University \\
 \end{frame}
 
 
-\subsection{Titles \& Sections}
+\subsection{Basic Writing}
+\begin{frame}[fragile]
+  \frametitle{Text Paragraphs}
+  \begin{itemize}
+    \item Any time LaTeX sees a blank line, it treats the next line as
+      the start of a new paragraph
+    \item You can force new lines with \verb.\\.
+    \item Add indentation by \verb.indent. or suppress it with \verb.\noindent.
+  \end{itemize}
+  \begin{verbatim}
+    This is the start of a new paragraph.
+    This is not, even though I'm on a new line.
+
+    This is another paragraph. \\
+    Now I've forced it onto a new line, but not a new
+    paragraph.
+  \end{verbatim}
+\end{frame}
 \begin{frame}[fragile]
   \frametitle{Titles}
   \begin{itemize}
-    \item \LaTeX has some shortcuts for you to make nice titles, but you don't \emph{have} to use them
+    \item There are some shortcuts for you to make nice titles, but you don't \emph{have} to use them
     \item A title will typically look like
   \end{itemize}
   \begin{verbatim}
@@ -101,6 +125,38 @@ Cornell University \\
     \date{November 2014}
     \maketitle
   \end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Sections}
+  \begin{itemize}
+    \item There are some shortcuts for you to make nice section headings (think chapters in a book, questions on a problem set, etc.)
+    \item Sections will typically look like
+  \end{itemize}
+  \begin{verbatim}
+    \section{A big section title}
+    \subsection{A nested section title}
+    \subsubsection{An even more nested title}
+  \end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Text Size}
+  \begin{itemize}
+    \item There are built in commands for changing text size
+    \item You can use them with \verb.\textsize{your text}.
+    \item Here are some examples
+  \end{itemize}
+  \begin{tabular}{ll}
+    \verb.\tiny. & \tiny{tiny text} \\
+    \verb.\scriptsize. & \scriptsize{scriptsize text} \\
+    \verb.\footnotesize. & \footnotesize{footnotesize text} \\
+    \verb.\small. & \small{small text} \\
+    \verb.\normalsize. & \normalsize{normalsize text} \\
+    \verb.\large. & \large{large text} \\
+    \verb.\Large. & \Large{Large text} \\
+    \verb.\LARGE. & \LARGE{LARGE text} \\
+    \verb.\huge. & \huge{huge text} \\
+    \verb.\Huge. & \Huge{Huge text} \\
+  \end{tabular}
 \end{frame}
 
 \subsection{List Structures}
@@ -275,17 +331,7 @@ Cornell University \\
   \end{multicols}
 \end{frame}
 
-\subsection{Paragraphs \& Alignment}
-\begin{frame}[fragile]
-  \frametitle{Text Paragraphs}
-  \begin{itemize}
-    \item Any time LaTeX sees a blank line, it treats the next line as
-      the start of a new paragraph
-    \item This can be suppressed by \verb+\noindent+
-    \item Add indentation by \verb+indent+
-  \end{itemize}
-\end{frame}
-
+\subsection{Math Paragraphs \& Alignment}
 \begin{frame}[fragile]
   \frametitle{Math Paragraphs}
   \begin{itemize}
@@ -640,115 +686,6 @@ Cornell University \\
   \begin{itemize}
     \item And \verb.\section., etc. are used to break up slides so you can get neat labels like the ones up top!
   \end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Paragraphs of Text}
-Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-
-Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Bullet Points}
-\begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
-\end{itemize}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-  \verb.for short inlines.
-  \begin{example}[Theorem Slide Code]
-    \begin{verbatim}
-      \begin{frame}
-        \frametitle{Theorem}
-        \begin{theorem}[Mass--energy equivalence]
-        $E = mc^2$
-        \end{theorem}
-      \end{frame}
-    \end{verbatim}
-  \end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
 \end{frame}
 
 \end{document}
