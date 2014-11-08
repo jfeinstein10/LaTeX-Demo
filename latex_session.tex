@@ -1,0 +1,716 @@
+\documentclass{beamer}
+
+\mode<presentation> {
+
+\usetheme{Montpellier}
+\usecolortheme{beaver}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+
+%------------------------------------------------------------------------------
+%	TITLE PAGE
+%------------------------------------------------------------------------------
+
+\title[Intro to \LaTeX]{Introduction to \LaTeX}
+
+\author{Scarlet \& Jeremy}
+\institute[Cornell University]{
+Cornell University \\
+\medskip
+\textit{hy323 \& jlf248}
+}
+\date{\today}
+
+
+\usetikzlibrary[topaths]
+\newcount\mycount
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------
+\section{Basic}
+%------------------------------------------------------------------------------
+
+\subsection{Setting Up}
+\begin{frame}[fragile]
+  \frametitle{Setting Up \& Compiling}
+    \begin{itemize}
+      \item Windows: use cygwin
+      \item Mac: https://tug.org/mactex/
+        \begin{itemize}
+          \item The instructions are really good
+          \item The files you have to download/install are huge (on the order of GBs)
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Basic Document Structure}
+    \begin{itemize}
+      \item
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Different Document Types}
+    \begin{itemize}
+      \item
+    \end{itemize}
+\end{frame}
+
+
+\subsection{Titles \& Sections}
+\begin{frame}
+	\frametitle{Titles \& Sections}
+\end{frame}
+
+\subsection{List Structures}
+\begin{frame}[fragile]
+\frametitle{Enumerate} %done
+  \begin{multicols}{2}
+    \begin{verbatim}
+        \begin{enumerate}
+            \item one.
+            \item two.
+        \end{enumerate}
+    \end{verbatim}
+  \columnbreak
+    \begin{enumerate}
+    	\item one.
+        \item two.
+    \end{enumerate}
+  \end{multicols}
+
+  \begin{multicols}{2}
+    \begin{verbatim}
+        \begin{enumerate}[a)]
+            \item one.
+            \item two.
+        \end{enumerate}
+    \end{verbatim}
+  \columnbreak
+    \begin{enumerate}[a)]
+    	\item one.
+        \item two.
+    \end{enumerate}
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Itemize} %done
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{itemize}
+        \item one.
+        \item two.
+      \end{itemize}
+    \end{verbatim}
+    \columnbreak
+    \begin{itemize}
+      \item one.
+      \item two.
+    \end{itemize}
+  \end{multicols}
+
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{itemize}
+        \item[Item1] one.
+        \item[Item2] two.
+      \end{itemize}
+    \end{verbatim}
+    \columnbreak
+      \begin{itemize}
+        \item[Item1] one.
+        \item[Item2] two.
+      \end{itemize}
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Nested Lists} %done
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{enumerate}
+        \item enumerate1
+          \begin{itemize}
+            \item item1
+            \item item2
+          \end{itemize}
+        \item enumerate2
+      \end{enumerate}
+    \end{verbatim}
+    \columnbreak
+      \begin{enumerate}
+        \item enumerate1
+          \begin{itemize}
+            \item item1
+            \item item2
+          \end{itemize}
+        \item enumerate2
+      \end{enumerate}
+  \end{multicols}
+\end{frame}
+
+\subsection{Math Mode \& Symbols}
+\begin{frame}[fragile]
+\frametitle{Math Mode}
+  \begin{itemize}
+    \item Enter math mode using \$ around texts
+  \end{itemize}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      $ math mode $
+    \end{verbatim}
+    \columnbreak
+    $math mode$
+  \end{multicols}
+
+  \begin{itemize}
+    \item Close \$ to go back to text mode
+  \end{itemize}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      $math$ text $math$
+    \end{verbatim}
+    \columnbreak
+    $math$ text $math$
+  \end{multicols}
+
+  \begin{itemize}
+    \item Or use \verb+\text+ to temporarily go into text mode
+  \end{itemize}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      $math \text{ text } math$
+    \end{verbatim}
+    \columnbreak
+    $math \text{ text } math$
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Commonly used symbols}
+  \begin{multicols}{2}
+    \verb+\geq \leq \neq+ \\
+    \verb+\oplus \times+ \\
+    \verb+\cup \cap+ \\
+    \verb+\vee \wedge+ \\
+    \verb+\forall \exists \in+  \\
+    \verb+\because \therefore+  \\
+    \verb+\rightarrow \leftarrow+\\
+    \verb+\Rightarrow \Leftarrow+ \\
+    \verb+\equiv \approx \sim+ \\
+    \verb+\LaTeX+ \\
+  \columnbreak
+    $\geq$ $\leq$ $\neq$\\
+    $\oplus$ $\times$\\
+    $\cup$ $\cap$\\
+    $\vee$ $\wedge$\\
+    $\forall$ $\exists$ $\in$\\
+    $\because$ $\therefore$\\
+    $\rightarrow$ $\leftarrow$\\
+    $\Rightarrow$ $\Leftarrow$\\
+    $\equiv$ $\approx$ $\sim $\\
+    \LaTeX
+  \end{multicols}
+  \begin{itemize}
+    \item \verb.{ } _ ^ # & $ % ~. Needs to be escaped to be used in text mode.
+    \item Use \url{http://detexify.kirelabs.org/classify.html}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Powers and Subscripts}
+  \begin{itemize}
+    \item Powers, subscripts, fractions are written in math mode!
+  \end{itemize}
+  \begin{multicols}{2}
+    \verb+a^b  a^{multichar}+\\
+    \verb+a_b  a_{multichar}+\\
+    \verb+\frac{a}{b}+\\
+  \columnbreak
+    $a^b$ $a^{multichar}$\\
+    $a_b$ $a_{multichar}$\\
+    $\frac{a}{b}$
+  \end{multicols}
+\end{frame}
+
+\subsection{Paragraphs \& Alignment}
+\begin{frame}[fragile]
+	\frametitle{Text Paragraphs}
+  \begin{itemize}
+    \item Any time LaTeX sees a blank line, it treats the next line as
+      the start of a new paragraph
+    \item This can be suppressed by \verb+\noindent+
+    \item Add indentation by \verb+indent+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Math Paragraphs}
+  \begin{itemize}
+    \item simple line of math can be written in \verb+\[ ... \]+
+    \item Automatically in math mode
+  \end{itemize}
+  \begin{verbatim}
+  \[
+    \{(pk,sk) \leftarrow Gen(1^n) :
+      (pk,Enc_{pk} (m_0))\}_n
+  \]
+  \end{verbatim}
+  \[
+    \{(pk,sk) \leftarrow Gen(1^n) : (pk,Enc_{pk} (m_0))\}_n
+  \]
+  \begin{itemize}
+    \item But you can't linebreak!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Alignment}
+  \begin{itemize}
+    \item Automatically in math mode
+    \item \verb.align. has equation numbers by default, \verb.align*. doesn't
+  \end{itemize}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{align}
+        f(x) = 5x^2 + 4x + 3\\
+        g(x) = 6x + 7
+      \end{align}
+    \end{verbatim}
+  \columnbreak
+    \begin{align}
+      f(x) = 5x^2 + 4x + 3\\
+      g(x) = 6x + 7
+    \end{align}
+  \end{multicols}
+
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{align*}
+        f(x) = 5x^2 + 4x + 3\\
+        g(x) = 6x + 7
+      \end{align*}
+    \end{verbatim}
+  \columnbreak
+    \begin{align*}
+      f(x) = 5x^2 + 4x + 3\\
+      g(x) = 6x + 7
+    \end{align*}
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Alignment}
+  \begin{itemize}
+    \item Align equations using anchors \&
+    \item Can be followed by anything, not just =
+  \end{itemize}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{align*}
+        f(x) &= (x + 2) - 2 \\
+             &= x \\
+             &\rightarrow wow!
+      \end{align*}
+    \end{verbatim}
+  \columnbreak
+    \begin{align*}
+      f(x) &= (x + 2) - 2\\
+           &= x \\
+           &\rightarrow wow!
+    \end{align*}
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{More Alignment}
+  \begin{itemize}
+    \item LaTeX assumes that each equation consists of two parts separated by
+      anchor \&
+  \end{itemize}
+  \begin{verbatim}
+    \begin{align*}
+      x&=y           &  w &=z              &  a&=b+c\\
+      2x&=-y         &  3w&=\frac{1}{2}z   &  a&=b\\
+      -4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
+    \end{align*}
+  \end{verbatim}
+  \begin{align*}
+    x&=y           &  w &=z              &  a&=b+c\\
+    2x&=-y         &  3w&=\frac{1}{2}z   &  a&=b\\
+    -4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
+  \end{align*}
+\end{frame}
+
+\subsection{Multicols}
+\begin{frame}[fragile]
+	\frametitle{Multicols}
+  \begin{verbatim}
+    \begin{multicols}{2}
+      \begin{enumerate} % chunk1
+        \item A-one
+        \item A-two
+      \end{enumerate}
+      \begin{enumerate} % chunk2
+        \item B-one
+        \item B-two
+      \end{enumerate}
+    \end{multicols}
+  \end{verbatim}
+
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item A-one
+    \item A-two
+  \end{enumerate}
+  \begin{enumerate}
+    \item B-one
+    \item B-two
+  \end{enumerate}
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Multicols}
+  \begin{verbatim}
+    \begin{multicols}{2}
+      Latex is beautiful! It is easy to learn!
+    \columnbreak        % forces column break
+      Computer Science is great!
+      Hope this session is helping!
+    \end{multicols}
+  \end{verbatim}
+
+  \begin{multicols}{2}
+    Latex is beautiful! It is easy to learn!
+  \columnbreak        % forces column break
+    Computer Science is great!
+    Hope this session is helping!
+  \end{multicols}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Intermediate}
+%----------------------------------------------------------------------------------------
+
+\subsection{Defining \& Renewing Commands}
+\begin{frame}[fragile]
+  \frametitle{New Commands}
+  \begin{itemize}
+    \item Define environments using \verb.\newcommand{\your_command_name}{what it does}.
+    \item Here's an example:
+  \end{itemize}
+  \begin{verbatim}
+    \newcommand{\scarlet}[1][Jeremy]
+      {$S_cA^rL_eT$ and {#1}}
+  \end{verbatim}
+  \newcommand{\scarlet}[1][Jeremy]{$S_cA^rL_eT$ and {#1}}
+  \begin{itemize}
+    \item Now you can use \verb.\scarlet. in your document to produce this: \scarlet.
+    \item Or you can use \verb.\scarlet[Scarlet]. to produce this: \scarlet[Scarlet].
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{New Environments}
+  \begin{itemize}
+    \item An environment is anything you use with \verb.\begin{env} contents \end{env}..
+    \item Define new environments using \verb.\newenvironment{name}[num]{before}{after}.
+    \item Here's an example:
+  \end{itemize}
+  \begin{verbatim}
+    \newenvironment{newitemize}
+      {Here goes nothing! \begin{itemize}}
+      {\end{itemize} And so ends the list!}
+  \end{verbatim}
+  \newenvironment{newitemize}
+    {Here goes nothing! \begin{itemize}}
+    {\end{itemize} And so ends the list!}
+  \begin{itemize}
+    \item Now you can use it in your document to produce this:
+      \begin{newitemize}
+        \item item 1
+        \item item 2
+      \end{newitemize}
+  \end{itemize}
+
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Renewing Commands}
+  We can also overwrite existing commands (or ones that we made) using \verb.\renewcommand. with the same syntax as \verb.\newcommand.
+
+  A common example would be redefining how sections and subsections look using the following
+  \begin{verbatim}
+    \renewcommand{\thesection}
+      {\Large Exercise \arabic{section}.}
+    \renewcommand{\thesubsection}
+      {\normalsize (\alph{subsection})}
+  \end{verbatim}
+  This will give you {\Large Exercise 1} as the section titles and {\normalsize (a)} for the subsections.
+\end{frame}
+
+\subsection{Boxes \& Resizing}
+\begin{frame}
+	\frametitle{Boxes \& Resizing}
+\end{frame}
+
+\subsection{Tables, Graphs, \& Figures}
+\begin{frame}[fragile]
+	\frametitle{Tables}
+  \begin{itemize}
+    \item Most of the time you won't want to do this by hand
+    \item There are lots of online tools that make it easier
+      \begin{itemize}
+        \item http://truben.no/table/
+        \item http://www.tablesgenerator.com/
+      \end{itemize}
+    \item The basic gist is
+  \end{itemize}
+
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{table}
+        \begin{tabular}{|l|r}
+        h1   & h2   \\ \hline
+        blah & blah \\
+        blah & blah \\
+        \end{tabular}
+      \end{table}
+    \end{verbatim}
+    \columnbreak
+    \begin{table}
+      \begin{tabular}{|l|r}
+      h1   & h2   \\ \hline
+      blah & blah \\
+      blah & blah \\
+      \end{tabular}
+    \end{table}
+  \end{multicols}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Tables}
+  \begin{itemize}
+    \item The \verb.{|l|r}. after \verb.\begin{tabular}. specifies the alignment of each column. \verb.{|l|r}. means the first column should be left aligned and the second column should be right aligned. The other option is using \verb.c. for center alignment.
+    \item We can put lines between columns by adding \verb.|.. For example, this \verb.{|c|c|c|}. will add lines around every column.
+    \item The \verb.&. separate the items in a row.
+    \item We can add lines between rows by using \verb.\\ \hline. instead of just \verb.\\..
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Graphs}
+  \begin{itemize}
+    \item For simple state machines/graphs, I recommend trying out this tool before jumping into the heavyweight stuff: http://madebyevan.com/fsm/.
+    \item If that doesn't work, then use \verb.tikz. by declaring \verb.\usepackage{tikz}. in your preamble. And look up examples that are similar to what you want to do on http://www.texample.net/tikz/examples/.
+    \item Some people get pretty crazy...
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Graphs}
+  \centering
+  \begin{tikzpicture}[transform shape]
+    %the multiplication with floats is not possible. Thus I split the loop in two.
+    \foreach \number in {1,...,8}{
+        % Computer angle:
+          \mycount=\number
+          \advance\mycount by -1
+    \multiply\mycount by 45
+          \advance\mycount by 0
+        \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:3cm) {};
+      }
+    \foreach \number in {9,...,16}{
+        % Computer angle:
+          \mycount=\number
+          \advance\mycount by -1
+    \multiply\mycount by 45
+          \advance\mycount by 22.5
+        \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:3cm) {};
+      }
+    \foreach \number in {1,...,15}{
+          \mycount=\number
+          \advance\mycount by 1
+    \foreach \numbera in {\the\mycount,...,16}{
+      \path (N-\number) edge[->,bend right=3] (N-\numbera)  edge[<-,bend
+        left=3] (N-\numbera);
+    }
+  }
+  \end{tikzpicture}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Figures}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Advanced}
+%----------------------------------------------------------------------------------------
+
+\subsection{External Packages}
+\begin{frame}
+	\frametitle{External Packages}
+\end{frame}
+
+\subsection{References}
+\begin{frame}[fragile]
+	\frametitle{References}
+  \begin{itemize}
+    \item You can reference nearly anything in \LaTeX: equations, figures, graphs, tables, etc.
+    \item Give the equation a \verb.\label{name}. and then get a reference to it (i.e. Equation 1) using \verb.\ref{name}.
+    \item Here's an example
+  \end{itemize}
+  \begin{equation}
+    \label{pythagorean}
+    c = \sqrt{a^2 + b^2}
+  \end{equation}
+  \begin{itemize}
+    \item This is a reference to Equation \ref{pythagorean}, and I didn't even have to keep track of the numbers; it's all done for you!
+  \end{itemize}
+\end{frame}
+
+\subsection{Presentations (Very Meta)}
+\begin{frame}[fragile]
+	\frametitle{Presentations (Very Meta)}
+  \begin{itemize}
+    \item Use beamer!
+    \item There are a lot of combinations of themes and layouts (\href{http://www.hartwork.org/beamer-theme-matrix/}{use this handy tool})
+    \item Slides are defined using
+  \end{itemize}
+  \begin{verbatim}
+    \begin{frame}
+      \frametitle{title}
+      ...content...
+    \end{frame}
+  \end{verbatim}
+  \begin{itemize}
+    \item And \verb.\section., etc. are used to break up slides so you can get neat labels like the ones up top!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Paragraphs of Text}
+Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
+
+Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Bullet Points}
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+\item Nam cursus est eget velit posuere pellentesque
+\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Blocks of Highlighted Text}
+\begin{block}{Block 1}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\end{block}
+
+\begin{block}{Block 2}
+Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
+\end{block}
+
+\begin{block}{Block 3}
+Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Multiple Columns}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth} % Left column and width
+\textbf{Heading}
+\begin{enumerate}
+\item Statement
+\item Explanation
+\item Example
+\end{enumerate}
+
+\column{.5\textwidth} % Right column and width
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Table}
+\begin{table}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Theorem}
+\begin{theorem}[Mass--energy equivalence]
+$E = mc^2$
+\end{theorem}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Verbatim}
+  \verb.for short inlines.
+  \begin{example}[Theorem Slide Code]
+    \begin{verbatim}
+      \begin{frame}
+        \frametitle{Theorem}
+        \begin{theorem}[Mass--energy equivalence]
+        $E = mc^2$
+        \end{theorem}
+      \end{frame}
+    \end{verbatim}
+  \end{example}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Figure}
+Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+%\begin{figure}
+%\includegraphics[width=0.8\linewidth]{test}
+%\end{figure}
+\end{frame}
+
+\end{document}
