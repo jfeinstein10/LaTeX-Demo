@@ -57,7 +57,8 @@ Cornell University \\
       \end{itemize}
     \item Widely used in academic research, especially the sciences
       \begin{itemize}
-        \item i.e. it gives off a very professional feel, even when what you're writing makes no sense $\ddot\smile$
+        \item i.e. it gives off a very professional feel,
+          even when what you're writing makes no sense $\ddot\smile$
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -76,14 +77,18 @@ Cornell University \\
           \item The instructions are really good
           \item The files you have to download/install are huge (on the order of GBs)
         \end{itemize}
-      \item I highly recommend using an editor like TeXshop, TeXworks, Vim, Emacs, or even Sublime Text to write LaTeX with because they all are either built to compile your documents or have well supported plugins that do it all for you.
+      \item I highly recommend using an editor like TeXshop, TeXworks, Vim,
+        Emacs, or even Sublime Text to write LaTeX with because they all are
+        either built to compile your documents or have well supported
+        plugins that do it all for you.
     \end{itemize}
 \end{frame}
 \begin{frame}[fragile]
   \frametitle{Basic Document Structure}
     \begin{itemize}
       \item \verb.\documentclass[options]{article}.
-      \item Preamble -- import external packages, set up page formatting, define your own macros, etc.
+      \item Preamble -- import external packages, set up page formatting,
+        define your own macros, etc.
       \item \verb.\begin{document}.
       \item Some sort of title
       \item \verb.\section{Section Title}.
@@ -110,30 +115,50 @@ Cornell University \\
     This is the start of a new paragraph.
     This is not, even though I'm on a new line.
 
-    This is another paragraph. \\
+      This is another paragraph. \\
     Now I've forced it onto a new line, but not a new
     paragraph.
   \end{verbatim}
 \end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Text Style}
   \begin{itemize}
-    \item There are all the normal text styles you'd expect from a word processor, but for some you have to use external packages.
-    \item For example, to use color you need to add \verb.\usepackage{color}. to your preamble
+    \item There are all the normal text styles you'd expect from a word
+      processor, but for some you have to use external packages.
+    \item For example, to use color you need to add \verb.\usepackage{color}.
+      to your preamble
   \end{itemize}
   \begin{tabular}{ll}
-    \verb.\textbf{Hello World}. & \textbf{Hello World} \\
-    \verb.\emph{Hello World}. & \emph{Hello World} \\
-    \verb.\textsc{Hello World}. & \textsc{Hello World} \\
-    \verb.\texttt{Hello World}. & \texttt{Hello World} \\
+    \verb.\textbf{Hello World}. & \textbf{Hello World} \\ %bold-face
+    \verb.\emph{Hello World}. & \emph{Hello World} \\ %emphasis
+    \verb.\textsc{Hello World}. & \textsc{Hello World} \\ %all caps
+    \verb.\texttt{Hello World}. & \texttt{Hello World} \\ %typewriter style
     \verb.\underline{Hello World}. & \underline{Hello World} \\
     \verb.\textcolor{red}{Hello World}. & \textcolor{red}{Hello World} \\
   \end{tabular}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Comments}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      This is shown1
+      %invisible
+      This is shown2
+    \end{verbatim}
+    \columnbreak
+    This is shown1\\
+    %invisible
+    This is shown2
+  \end{multicols}
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Titles}
   \begin{itemize}
-    \item There are some shortcuts for you to make nice titles, but you don't \emph{have} to use them
+    \item There are some shortcuts for you to make nice titles,
+      but you don't \emph{have} to use them
     \item A title will typically look like
   \end{itemize}
   \begin{verbatim}
@@ -143,10 +168,12 @@ Cornell University \\
     \maketitle
   \end{verbatim}
 \end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Sections}
   \begin{itemize}
-    \item There are some shortcuts for you to make nice section headings (think chapters in a book, questions on a problem set, etc.)
+    \item There are some shortcuts for you to make nice section headings
+      (think chapters in a book, questions on a problem set, etc.)
     \item Sections will typically look like
   \end{itemize}
   \begin{verbatim}
@@ -309,7 +336,7 @@ Cornell University \\
     \verb+\cup \cap+ \\
     \verb+\vee \wedge+ \\
     \verb+\forall \exists \in+  \\
-    \verb+\because \therefore+  \\
+    \verb+\because \therefore \cdots+  \\
     \verb+\rightarrow \leftarrow+\\
     \verb+\Rightarrow \Leftarrow+ \\
     \verb+\equiv \approx \sim+ \\
@@ -320,7 +347,7 @@ Cornell University \\
     $\cup$ $\cap$\\
     $\vee$ $\wedge$\\
     $\forall$ $\exists$ $\in$\\
-    $\because$ $\therefore$\\
+    $\because$ $\therefore$ $\cdots$\\
     $\rightarrow$ $\leftarrow$\\
     $\Rightarrow$ $\Leftarrow$\\
     $\equiv$ $\approx$ $\sim $\\
@@ -428,7 +455,7 @@ Cornell University \\
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{More Alignment}
+  \frametitle{More Alignment (Advanced)}
   \begin{itemize}
     \item LaTeX assumes that each equation consists of two parts separated by
       anchor \&
@@ -445,6 +472,58 @@ Cornell University \\
     2x&=-y         &  3w&=\frac{1}{2}z   &  a&=b\\
     -4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
   \end{align*}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Mid-point review - math mode}
+  How can we make..\\
+  \begin{itemize}
+    \item Let set $S = \{1, 2, \cdots, 3\}$
+    \item Let $x = a^{100}_1 + a^{100}_2$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Mid-point review - math mode}
+
+  Let set $S = \{1, 2, \cdots, 30\}$
+
+  \begin{verbatim}
+    Let set $S = \{1, 2, \cdots, 30\}$
+  \end{verbatim}
+
+  Let $x = a^{100}_1 + a^{100}_2$
+  \begin{verbatim}
+    Let $x = a^{100}_1 + a^{100}_2$
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Mid-point review - alignment}
+
+  How do we make...\\
+
+  \begin{align*}
+    y = f(x) &= x + x + x \text{ (} \because \text{idk)}\\
+             &= 3x
+  \end{align*}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Mid-point review - alignment}
+
+  \begin{align*}
+    y = f(x) &= x + x + x \text{ (} \because \text{idk)}\\
+             &= 3x
+  \end{align*}
+
+  \begin{verbatim}
+    \begin{align*}
+      y = f(x) &= x + x + x
+            \text{ (} \because \text{idk)}\\
+               &= 3x
+    \end{align*}
+  \end{verbatim}
 \end{frame}
 
 \subsection{Multicols}
@@ -501,8 +580,10 @@ Cornell University \\
 \subsection{Defining \& Renewing Commands}
 \begin{frame}[fragile]
   \frametitle{New Commands}
+  %use xparse, xargs package for more default, optional values
   \begin{itemize}
     \item Define environments using \verb.\newcommand{\your_command_name}{what it does}.
+    \item \verb+\newcommand{\name}[num_args][default_arg]{what..}+
     \item Here's an example:
   \end{itemize}
   \begin{verbatim}
@@ -515,6 +596,22 @@ Cornell University \\
     \item Or you can use \verb.\scarlet[Scarlet]. to produce this: \scarlet[Scarlet].
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Renewing Commands}
+  We can also overwrite existing commands (or ones that we made) using
+  \verb.\renewcommand. with the same syntax as \verb.\newcommand.
+
+  A common example would be redefining how sections and subsections look using the following
+  \begin{verbatim}
+    \renewcommand{\thesection}
+      {\Large Exercise \arabic{section}.}
+    \renewcommand{\thesubsection}
+      {\normalsize (\alph{subsection})}
+  \end{verbatim}
+  This will give you {\Large Exercise 1} as the section titles and {\normalsize (a)} for the subsections.
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{New Environments}
   \begin{itemize}
@@ -531,26 +628,12 @@ Cornell University \\
     {Here goes nothing! \begin{itemize}}
     {\end{itemize} And so ends the list!}
   \begin{itemize}
-    \item Now you can use it in your document to produce this:
+    \item Now you can use it in your document to produce this:\\
       \begin{newitemize}
         \item item 1
         \item item 2
       \end{newitemize}
   \end{itemize}
-
-\end{frame}
-\begin{frame}[fragile]
-  \frametitle{Renewing Commands}
-  We can also overwrite existing commands (or ones that we made) using \verb.\renewcommand. with the same syntax as \verb.\newcommand.
-
-  A common example would be redefining how sections and subsections look using the following
-  \begin{verbatim}
-    \renewcommand{\thesection}
-      {\Large Exercise \arabic{section}.}
-    \renewcommand{\thesubsection}
-      {\normalsize (\alph{subsection})}
-  \end{verbatim}
-  This will give you {\Large Exercise 1} as the section titles and {\normalsize (a)} for the subsections.
 \end{frame}
 
 \subsection{Boxes \& Resizing}
@@ -723,7 +806,7 @@ Cornell University \\
     \item for short verbatim words, use \verb.\verb.
     \item \verb.\verb. turns words that are within the two separators into
       verbatim.
-    \item Separater is the letter folling the \verb.\verb.
+    \item Separater is the letter following the \verb.\verb.
     \begin{verbatim}
       \verb+Everything Here is Verbatim+
     \end{verbatim}
@@ -739,14 +822,28 @@ Cornell University \\
   \begin{itemize}
     \item You can reference nearly anything in \LaTeX: equations, figures, graphs, tables, etc.
     \item Give the equation a \verb.\label{name}. and then get a reference to it (i.e. Equation 1) using \verb.\ref{name}.
-    \item Here's an example
   \end{itemize}
-  \begin{equation}
-    \label{pythagorean}
-    c = \sqrt{a^2 + b^2}
-  \end{equation}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{References}
+  \begin{multicols}{2}
+    \begin{verbatim}
+      \begin{equation}
+        \label{pythagorean}
+        c = \sqrt{a^2 + b^2}
+      \end{equation}
+    \end{verbatim}
+    \columnbreak
+    \begin{equation}
+      \label{pythagorean}
+      c = \sqrt{a^2 + b^2}
+    \end{equation} \\
+  \end{multicols}
+
   \begin{itemize}
-    \item This is a reference to Equation \ref{pythagorean}, and I didn't even have to keep track of the numbers; it's all done for you!
+    \item reference to Equation \ref{pythagorean}
+    \item reference to Equation \verb+\ref{pythagorean}+
   \end{itemize}
 \end{frame}
 
